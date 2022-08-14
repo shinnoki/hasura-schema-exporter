@@ -1,0 +1,23 @@
+table:
+  name: post
+  schema: public
+insert_permissions:
+  - role: user
+    permission:
+      check: {}
+      columns:
+        - title
+        - id
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - id
+        - title
+      filter: {}
+  - role: user
+    permission:
+      columns:
+        - title
+        - id
+      filter: {}
