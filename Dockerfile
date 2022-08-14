@@ -13,4 +13,6 @@ WORKDIR /app
 
 COPY ./hasura-sync-schema.sh .
 
+ENV HASURA_SYNC_SCHEMA_ROLES="admin"
+
 CMD ["sh", "./hasura-sync-schema.sh"]
