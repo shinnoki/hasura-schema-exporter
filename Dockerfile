@@ -7,7 +7,9 @@ RUN apk update && apk add --no-cache \
 
 RUN npm install --location=global graphqurl
 
-RUN mkdir -p {/hasura-metadata, /hasura-migrations, /hasura-schema}
+RUN mkdir -p /hasura-metadata \
+    && mkdir -p /hasura-migrations \
+    && mkdir -p /hasura-schema
 
 WORKDIR /app
 
