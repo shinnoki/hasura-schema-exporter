@@ -11,8 +11,8 @@ RUN mkdir -p {/hasura-metadata, /hasura-migrations, /hasura-schema}
 
 WORKDIR /app
 
-COPY ./hasura-sync-schema.sh .
+COPY ./hasura-schema-exporter.sh .
 
-ENV HASURA_SYNC_SCHEMA_ROLES="admin"
+ENV HASURA_SCHEMA_EXPORTER_ROLES="admin"
 
-CMD ["sh", "./hasura-sync-schema.sh"]
+CMD ["sh", "./hasura-schema-exporter.sh"]

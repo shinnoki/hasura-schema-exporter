@@ -32,7 +32,7 @@ services:
       ## uncomment next line to set an admin secret
       HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
     
-  sync-schema:
+  schema-exporter:
     build: "../"
     depends_on:
      - "graphql-engine"
@@ -43,7 +43,7 @@ services:
     environment:
       HASURA_GRAPHQL_ENDPOINT : http://graphql-engine:8080
       HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
-      HASURA_SYNC_SCHEMA_ROLES: admin, user, anonymous
+      HASURA_SCHEMA_EXPORTER_ROLES: admin, user, anonymous
 volumes:
   db_data:
 
